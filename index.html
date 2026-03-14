@@ -34,7 +34,7 @@ header{
   z-index:1000;
 }
 header img.logo{
-  height:75px; /* aumentado */
+  height:75px; /* logo maior */
   margin-right:1rem;
   position:absolute;
   left:20px; 
@@ -52,20 +52,20 @@ nav ul{
   gap:2rem;
 }
 nav ul li a{
-  color:#111; /* cor normal da letra */
+  color:#111;
   font-weight:500;
   text-decoration:none;
   padding:0.5rem 0.8rem;
   border-radius:8px;
   transition: all 0.3s;
   position:relative;
-  border:2px solid transparent; /* borda inicial invisível */
-  background-color: transparent; /* fundo transparente inicial */
+  border:2px solid transparent;
+  background-color: transparent;
 }
 nav ul li a:hover{
-  color:#111; /* mantém a cor da letra */
-  background-color: #ccc; /* fundo cinza sólido */
-  border:2px solid #ccc; /* borda cinza preenchida */
+  color:#111;
+  background-color: #ccc;
+  border:2px solid #ccc;
 }
 
 /* container */
@@ -169,13 +169,13 @@ footer{
   <div class="card">
     <img src="dragao-articulado.png.png" alt="Dragão Articulado">
     <h2>Dragão Articulado</h2>
-    <a class="botao" href="#">Comprar no Mercado Livre</a>
+    <a class="botao" href="#">Comprar</a>
   </div>
 
   <div class="card">
     <img src="chaveiro.png.png" alt="Chaveiro 3D">
     <h2>Chaveiro 3D</h2>
-    <a class="botao" href="#">Comprar no Mercado Livre</a>
+    <a class="botao" href="#">Comprar</a>
   </div>
 
 </section>
@@ -207,11 +207,11 @@ links.forEach(link=>{
     target.scrollIntoView({behavior:'smooth'});
   });
   link.addEventListener('mouseenter', ()=>{
-    link.style.transform='translateY(-10px)'; // flutua
+    link.style.transform='translateY(-10px)';
     link.style.transition='transform 0.3s, background-color 0.3s, border 0.3s';
   });
   link.addEventListener('mouseleave', ()=>{
-    link.style.transform='translateY(0)'; // volta
+    link.style.transform='translateY(0)';
   });
 });
 
