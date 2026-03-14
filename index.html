@@ -103,6 +103,7 @@ section{
   width:100%;
   border-radius:12px;
   object-fit:contain;
+  transition: transform 0.3s;
 }
 
 /* Botão */
@@ -153,11 +154,11 @@ footer{
 
 <section id="produtos" class="produtos">
 <div class="card">
-<img src="dragao-articulado.png.png" alt="Dragão Articulado">
+<img src="dragao-articulado.png.png" alt="Dragão Articulado" id="dragao">
 <h2>Dragão Articulado</h2>
 <a class="botao" href="#">Comprar no Mercado Livre</a>
 </div>
-<!-- Mais cards podem ser adicionados -->
+<!-- Você pode adicionar mais cards aqui -->
 </section>
 
 <section id="servicos">
@@ -168,6 +169,7 @@ footer{
 <section id="contato">
 <h2>Contato</h2>
 <p>Email: contato@ezratec3d.com.br | Tel: +55 61 98107-8614</p>
+<a class="botao" href="https://wa.me/5561981078614" target="_blank">Chamar no WhatsApp</a>
 </section>
 
 <footer>
@@ -205,6 +207,14 @@ secoes.forEach(secao => {
     secao.style.boxShadow='0 20px 60px rgba(0,0,0,0.1)';
   });
 });
+
+/* Dragão girando lentamente (efeito 3D) */
+const dragao = document.getElementById('dragao');
+let angle = 0;
+setInterval(() => {
+  angle += 0.3; // velocidade da rotação
+  dragao.style.transform = `rotateY(${angle}deg)`;
+}, 30);
 </script>
 
 </body>
