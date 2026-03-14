@@ -11,17 +11,20 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:#111;
-background:#ffffff;
 
-/* textura 3D suave */
+/* fundo branco */
+background-color:#ffffff;
 
+/* textura tipo linhas de impressão 3D */
 background-image:
-radial-gradient(circle at 20% 20%, #f3f3f3 0%, transparent 40%),
-radial-gradient(circle at 80% 30%, #f5f5f5 0%, transparent 40%),
-radial-gradient(circle at 40% 80%, #eeeeee 0%, transparent 40%);
+repeating-linear-gradient(
+45deg,
+#f2f2f2,
+#f2f2f2 2px,
+#ffffff 2px,
+#ffffff 8px
+);
 
-background-size:600px 600px;
-background-repeat:no-repeat;
 }
 
 /* topo */
@@ -41,3 +44,40 @@ font-size:20px;
 color:#666;
 margin-top:10px;
 }
+
+/* área de produtos */
+
+.produtos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+padding:60px;
+}
+
+/* cards */
+
+.card{
+background:white;
+width:240px;
+border-radius:20px;
+padding:20px;
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.card h3{
+margin-top:
