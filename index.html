@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +90,7 @@ section{
 
 /* Título maior no início */
 #inicio h2 {
-  font-size:3rem; /* aumentado */
+  font-size:3rem; /* maior destaque */
   margin-bottom:20px;
   color:#111;
 }
@@ -147,6 +146,31 @@ footer{
   color:#999;
   margin-bottom:40px;
 }
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:10px;
+}
+.footer-links a{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#111;
+  font-weight:bold;
+  padding:5px 10px;
+  border-radius:8px;
+  transition: all 0.3s;
+}
+.footer-links a:hover{
+  background-color:#ccc;
+  border:2px solid #ccc;
+}
+.footer-links img{
+  height:20px;
+  margin-right:5px;
+  vertical-align:middle;
+}
 </style>
 </head>
 <body>
@@ -172,19 +196,16 @@ footer{
 </section>
 
 <section id="produtos" class="produtos">
-
   <div class="card">
     <img src="dragao-articulado.png.png" alt="Dragão Articulado">
     <h2>Dragão Articulado</h2>
     <a class="botao" href="#">Comprar</a>
   </div>
-
   <div class="card">
     <img src="chaveiro.png.png" alt="Chaveiro 3D">
     <h2>Chaveiro 3D</h2>
     <a class="botao" href="#">Comprar</a>
   </div>
-
 </section>
 
 <section id="servicos">
@@ -199,7 +220,15 @@ footer{
 </section>
 
 <footer>
-© 2026 Ezra 3D • Impressão 3D
+<div class="footer-links">
+  <a href="https://www.youtube.com/" target="_blank">
+    <img src="youtube-logo.png" alt="YouTube"> YouTube
+  </a>
+  <a href="https://www.mercadolivre.com.br/" target="_blank">
+    <img src="mercadolivre-logo.png" alt="Mercado Livre"> Mercado Livre
+  </a>
+</div>
+© 2026 Ezra Tec 3D • Impressão 3D
 </footer>
 
 </div>
