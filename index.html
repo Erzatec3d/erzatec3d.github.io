@@ -53,9 +53,11 @@ nav ul li a{
   border-radius:8px;
   transition: all 0.3s;
   position:relative;
+  border:2px solid transparent; /* borda inicial invisível */
 }
 nav ul li a:hover{
   color:#0071e3;
+  border:2px solid #ccc; /* borda cinza ao passar o mouse */
 }
 
 /* container */
@@ -187,7 +189,7 @@ footer{
 </div>
 
 <script>
-/* Scroll suave e efeito flutuar nos links do menu topo */
+/* Scroll suave e hover flutuante + borda nos links do menu topo */
 const links = document.querySelectorAll('nav ul li a');
 links.forEach(link=>{
   link.addEventListener('click', e=>{
@@ -196,11 +198,11 @@ links.forEach(link=>{
     target.scrollIntoView({behavior:'smooth'});
   });
   link.addEventListener('mouseenter', ()=>{
-    link.style.transform='translateY(-10px)'; /* flutua */
-    link.style.transition='transform 0.3s';
+    link.style.transform='translateY(-10px)'; // flutua
+    link.style.transition='transform 0.3s, border 0.3s';
   });
   link.addEventListener('mouseleave', ()=>{
-    link.style.transform='translateY(0)'; /* volta */
+    link.style.transform='translateY(0)'; // volta
   });
 });
 
