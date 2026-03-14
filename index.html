@@ -27,7 +27,7 @@ header{
   background:rgba(255,255,255,0.95);
   backdrop-filter: blur(5px);
   display:flex;
-  justify-content:space-between;
+  justify-content:center; /* centralizado */
   align-items:center;
   padding:1rem 3rem;
   border-bottom:1px solid #e0e0e0;
@@ -38,6 +38,7 @@ header h1{
   margin:0;
   font-weight:bold;
   color:#111;
+  margin-right:2rem; /* espaço entre título e menu */
 }
 nav ul{
   display:flex;
@@ -155,13 +156,13 @@ footer{
 <section id="produtos" class="produtos">
 
   <div class="card">
-    <img src="dragao-articulado.png.png" alt="Dragão Articulado" id="dragao">
+    <img src="dragao-articulado.png.png" alt="Dragão Articulado">
     <h2>Dragão Articulado</h2>
     <a class="botao" href="#">Comprar no Mercado Livre</a>
   </div>
 
   <div class="card">
-    <img src="chaveiro.png.png" alt="Chaveiro 3D" id="chaveiro">
+    <img src="chaveiro.png.png" alt="Chaveiro 3D">
     <h2>Chaveiro 3D</h2>
     <a class="botao" href="#">Comprar no Mercado Livre</a>
   </div>
@@ -186,7 +187,7 @@ footer{
 </div>
 
 <script>
-/* Scroll suave e hover flutuante nos links do topo */
+/* Scroll suave */
 const links = document.querySelectorAll('nav ul li a');
 links.forEach(link=>{
   link.addEventListener('click', e=>{
@@ -194,6 +195,7 @@ links.forEach(link=>{
     const target=document.querySelector(link.getAttribute('href'));
     target.scrollIntoView({behavior:'smooth'});
   });
+  /* efeito de flutuar no menu topo */
   link.addEventListener('mouseenter', ()=>{
     link.style.transform='translateY(-8px)';
   });
@@ -214,20 +216,6 @@ secoes.forEach(secao => {
     secao.style.boxShadow='0 20px 60px rgba(0,0,0,0.1)';
   });
 });
-
-/* Dragão e Chaveiro girando lentamente (efeito 3D) */
-const dragao = document.getElementById('dragao');
-const chaveiro = document.getElementById('chaveiro');
-let angleDragao = 0;
-let angleChaveiro = 0;
-
-setInterval(() => {
-  angleDragao += 0.3;
-  dragao.style.transform = `rotateY(${angleDragao}deg)`;
-
-  angleChaveiro += 0.3;
-  chaveiro.style.transform = `rotateY(${angleChaveiro}deg)`;
-}, 30);
 </script>
 
 </body>
