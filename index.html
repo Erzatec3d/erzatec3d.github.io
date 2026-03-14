@@ -15,8 +15,6 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#f5f5f7;
 
-/* textura tipo camadas da impressão */
-
 background-image: repeating-linear-gradient(
 45deg,
 #ececec,
@@ -24,163 +22,116 @@ background-image: repeating-linear-gradient(
 #f5f5f7 2px,
 #f5f5f7 8px
 );
-
 }
 
-/* container central */
+/* container */
 
 .container{
-
 max-width:1100px;
-
 margin:auto;
-
 padding:40px;
-
 background:white;
-
 border-radius:20px;
-
 margin-top:40px;
-
 box-shadow:0 20px 60px rgba(0,0,0,0.1);
-
 border:1px solid #e5e5e5;
-
 }
 
 /* topo */
 
 header{
-
 text-align:center;
-
 padding-bottom:30px;
-
 border-bottom:1px solid #eee;
-
 }
 
 header h1{
-
 font-size:50px;
-
 margin:0;
-
 }
 
 header p{
-
 color:#777;
-
 }
 
 /* produtos */
 
 .produtos{
-
 display:flex;
-
 justify-content:center;
-
 gap:40px;
-
 flex-wrap:wrap;
-
 padding-top:40px;
-
 }
 
-/* card */
-
 .card{
-
 background:#fff;
-
 border-radius:16px;
-
 width:260px;
-
 padding:20px;
-
 text-align:center;
-
 border:1px solid #eee;
-
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
 transition:0.35s;
-
 }
 
 .card:hover{
-
 transform:translateY(-12px) scale(1.03);
-
 box-shadow:0 25px 50px rgba(0,0,0,0.15);
-
 }
-
-/* imagem */
 
 .card img{
-
 width:100%;
-
 border-radius:12px;
-
-transition:0.3s;
-
 }
-
-.card:hover img{
-
-transform:scale(1.05);
-
-}
-
-/* botão */
 
 .botao{
-
 display:inline-block;
-
 margin-top:15px;
-
 padding:12px 22px;
-
 background:#0071e3;
-
 color:white;
-
 text-decoration:none;
-
 border-radius:8px;
-
 font-weight:bold;
-
-transition:0.3s;
-
 }
 
 .botao:hover{
-
 background:#005dc1;
-
 }
 
 /* rodapé */
 
 footer{
-
-text-align:center;
-
 margin-top:40px;
+border-top:1px solid #eee;
+padding-top:20px;
+text-align:center;
+}
 
-color:#777;
+/* menu rodapé */
 
+.footer-menu{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-bottom:15px;
+}
+
+.footer-item{
+cursor:pointer;
+color:#666;
+font-weight:bold;
+transition:0.3s;
+}
+
+.footer-item:hover{
+color:#0071e3;
+}
+
+.copyright{
 font-size:14px;
-
+color:#999;
 }
 
 </style>
@@ -194,7 +145,6 @@ font-size:14px;
 <header>
 
 <h1>Ezra 3D</h1>
-
 <p>Produtos criados com Impressão 3D</p>
 
 </header>
@@ -207,7 +157,7 @@ font-size:14px;
 
 <h2>Dragão Articulado</h2>
 
-<a class="botao" href="COLE_SEU_LINK_AQUI">
+<a class="botao" href="#">
 Comprar no Mercado Livre
 </a>
 
@@ -217,7 +167,17 @@ Comprar no Mercado Livre
 
 <footer>
 
-Ezra 3D • Impressão 3D
+<div class="footer-menu">
+
+<div class="footer-item">Início</div>
+<div class="footer-item">Produtos</div>
+<div class="footer-item">Contato</div>
+
+</div>
+
+<div class="copyright">
+© Ezra 3D • Impressão 3D
+</div>
 
 </footer>
 
@@ -225,17 +185,21 @@ Ezra 3D • Impressão 3D
 
 <script>
 
-/* animação de entrada */
+/* efeito extra ao passar o mouse */
 
-document.body.style.opacity="0";
+const itens = document.querySelectorAll(".footer-item");
 
-window.onload=function(){
+itens.forEach(item => {
 
-document.body.style.transition="opacity 1s";
+item.addEventListener("mouseover", function(){
+this.style.transform="scale(1.1)";
+});
 
-document.body.style.opacity="1";
+item.addEventListener("mouseout", function(){
+this.style.transform="scale(1)";
+});
 
-}
+});
 
 </script>
 
