@@ -2,19 +2,13 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ezra 3D</title>
-
+<title>Ezra Tec 3D</title>
 <style>
-
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-
-  /* Fundo de filamentos coloridos como você pediu antes */
   background:#f5f5f7;
   background-image: repeating-linear-gradient(
     45deg,
@@ -25,43 +19,71 @@ body{
   );
 }
 
+/* Header / menu topo */
+header{
+  position: sticky;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter: blur(5px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 3rem;
+  border-bottom:1px solid #e0e0e0;
+  z-index:1000;
+}
+header h1{
+  font-size:2rem;
+  margin:0;
+  font-weight:bold;
+  color:#111;
+}
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:2rem;
+}
+nav ul li a{
+  color:#111;
+  font-weight:500;
+  text-decoration:none;
+  padding:0.5rem 0.8rem;
+  border-radius:8px;
+  transition: all 0.3s;
+  position:relative;
+}
+nav ul li a:hover{
+  color:#0071e3;
+}
+
 /* container */
 .container{
   max-width:1100px;
   margin:auto;
   padding:40px;
+}
+
+/* Seções */
+section{
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
   background:white;
   border-radius:20px;
-  margin-top:40px;
   box-shadow:0 20px 60px rgba(0,0,0,0.1);
   border:1px solid #e5e5e5;
-}
-
-/* topo */
-header{
+  margin-bottom:40px;
   text-align:center;
-  padding-bottom:30px;
-  border-bottom:1px solid #eee;
 }
 
-header h1{
-  font-size:50px;
-  margin:0;
-}
-
-header p{
-  color:#777;
-}
-
-/* produtos */
+/* Produtos */
 .produtos{
   display:flex;
   justify-content:center;
   gap:40px;
   flex-wrap:wrap;
-  padding-top:40px;
 }
-
 .card{
   background:#fff;
   border-radius:16px;
@@ -72,17 +94,17 @@ header p{
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
   transition:0.35s;
 }
-
 .card:hover{
   transform:translateY(-12px) scale(1.03);
   box-shadow:0 25px 50px rgba(0,0,0,0.15);
 }
-
 .card img{
   width:100%;
   border-radius:12px;
+  object-fit:contain;
 }
 
+/* Botão */
 .botao{
   display:inline-block;
   margin-top:15px;
@@ -93,112 +115,83 @@ header p{
   border-radius:8px;
   font-weight:bold;
 }
-
 .botao:hover{
   background:#005dc1;
 }
 
-/* rodapé */
+/* Footer */
 footer{
-  margin-top:40px;
-  border-top:1px solid #eee;
-  padding-top:20px;
   text-align:center;
-}
-
-/* menu rodapé */
-.footer-menu{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  margin-bottom:15px;
-}
-
-.footer-item{
-  cursor:pointer;
-  color:#666;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.footer-item:hover{
-  color:#0071e3;
-}
-
-.copyright{
+  padding:20px;
   font-size:14px;
   color:#999;
 }
-
 </style>
-
 </head>
-
 <body>
+
+<header>
+<h1>Ezra Tec 3D</h1>
+<nav>
+<ul>
+  <li><a href="#inicio">Início</a></li>
+  <li><a href="#produtos">Produtos</a></li>
+  <li><a href="#servicos">Serviços</a></li>
+  <li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+</header>
 
 <div class="container">
 
-<header>
+<section id="inicio">
+<h2>Bem-vindo à Ezra Tec 3D!</h2>
+<p>Na Ezra Tec 3D, unimos tecnologia, criatividade e precisão. Produzimos objetos lúdicos, utilidades e brinquedos em 3D com atenção máxima aos detalhes, trazendo soluções inovadoras e experiências únicas.</p>
+</section>
 
-<h1>Ezra 3D</h1>
-<p>Produtos criados com Impressão 3D</p>
-
-</header>
-
-<section class="produtos">
-
+<section id="produtos" class="produtos">
 <div class="card">
-
-<!-- Dragão correto -->
 <img src="/mnt/data/dragao-articulado.png.png" alt="Dragão Articulado">
-
 <h2>Dragão Articulado</h2>
-
-<a class="botao" href="#">
-Comprar no Mercado Livre
-</a>
-
+<a class="botao" href="#">Comprar no Mercado Livre</a>
 </div>
 
+<!-- Adicionar mais cards aqui se quiser -->
+</section>
+
+<section id="servicos">
+<h2>Serviços</h2>
+<p>Formatação, manutenção, gráfica rápida, vendas e impressões 3D personalizadas de alta qualidade.</p>
+</section>
+
+<section id="contato">
+<h2>Contato</h2>
+<p>Email: contato@ezratec3d.com.br | Tel: +55 61 98107-8614</p>
 </section>
 
 <footer>
-
-<div class="footer-menu">
-
-<div class="footer-item">Início</div>
-<div class="footer-item">Produtos</div>
-<div class="footer-item">Contato</div>
-
-</div>
-
-<div class="copyright">
-© Ezra 3D • Impressão 3D
-</div>
-
+© 2026 Ezra 3D • Impressão 3D
 </footer>
 
 </div>
 
 <script>
-
-/* efeito extra ao passar o mouse */
-const itens = document.querySelectorAll(".footer-item");
-
-itens.forEach(item => {
-
-  item.addEventListener("mouseover", function(){
-    this.style.transform="scale(1.1)";
+/* Scroll suave e efeito flutuar nos links do topo */
+const links = document.querySelectorAll('nav ul li a');
+links.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    const target=document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({behavior:'smooth'});
   });
-
-  item.addEventListener("mouseout", function(){
-    this.style.transform="scale(1)";
+  link.addEventListener('mouseenter', ()=>{
+    link.style.transform='translateY(-8px)';
   });
-
+  link.addEventListener('mouseleave', ()=>{
+    link.style.transform='translateY(0)';
+  });
 });
-
 </script>
 
 </body>
-
 </html>
