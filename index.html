@@ -1,94 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<title>Ezra 3D</title>
 <meta charset="UTF-8">
+<title>Ezra 3D</title>
+
 <style>
 
 body{
-font-family: Arial;
 margin:0;
-background-color:#ffffff;
-background-image: radial-gradient(circle at 1px 1px, #eaeaea 1px, transparent 0);
-background-size: 40px 40px;
+font-family:Arial, Helvetica, sans-serif;
+background:white;
+background-image: radial-gradient(#e8e8e8 1px, transparent 1px);
+background-size:40px 40px;
+color:#111;
+}
 
-color:white;
+/* topo */
+
+header{
+padding:80px 20px;
 text-align:center;
 }
 
-header{
-padding:60px;
-font-size:40px;
-font-weight:bold;
+header h1{
+font-size:55px;
+margin:0;
 }
+
+header p{
+font-size:20px;
+color:#666;
+}
+
+/* produtos */
 
 .produtos{
 display:flex;
 justify-content:center;
 gap:40px;
-padding:40px;
+padding:60px;
 flex-wrap:wrap;
 }
 
 .card{
-background:#1c1c1c;
+background:white;
+width:240px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
 padding:20px;
-border-radius:15px;
-width:220px;
+text-align:center;
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.05);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-.botao{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:#0071e3;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-Ezra 3D
-</header>
-
-<h2>Produtos Impressos em 3D</h2>
-
-<div class="produtos">
-
-<div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Produto 1</h3>
-<a class="botao" href="LINK_DO_MERCADO_LIVRE">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Produto 2</h3>
-<a class="botao" href="LINK_DO_MERCADO_LIVRE">Comprar</a>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/200">
-<h3>Produto 3</h3>
-<a class="botao" href="LINK_DO_MERCADO_LIVRE">Comprar</a>
-</div>
-
-</div>
-
-</body>
-</html>
+transform:translateY(-1
