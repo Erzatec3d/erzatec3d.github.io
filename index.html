@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <title>Ezra 3D</title>
@@ -9,18 +8,16 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 background:white;
-background-image: radial-gradient(#e8e8e8 1px, transparent 1px);
+background-image: radial-gradient(#e6e6e6 1px, transparent 1px);
 background-size:40px 40px;
 color:#111;
 }
 
-/* topo */
-
 header{
-padding:80px 20px;
 text-align:center;
+padding:80px 20px;
 }
 
 header h1{
@@ -29,11 +26,9 @@ margin:0;
 }
 
 header p{
-font-size:20px;
 color:#666;
+font-size:20px;
 }
-
-/* produtos */
 
 .produtos{
 display:flex;
@@ -54,4 +49,71 @@ transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-1
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.botao{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#0071e3;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.botao:hover{
+background:#005dc1;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Ezra 3D</h1>
+<p>Produtos feitos em impressão 3D</p>
+</header>
+
+<section class="produtos">
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Produto 1</h3>
+<a class="botao" href="#">Comprar</a>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Produto 2</h3>
+<a class="botao" href="#">Comprar</a>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Produto 3</h3>
+<a class="botao" href="#">Comprar</a>
+</div>
+
+</section>
+
+<footer>
+Ezra 3D • Impressão 3D
+</footer>
+
+</body>
+</html>
