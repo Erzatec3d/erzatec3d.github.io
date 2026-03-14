@@ -6,28 +6,26 @@
 <title>Ezra Tec 3D</title>
 <style>
   /* Reset e corpo */
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-  body { background: #e8f0f8; color: #333; overflow-x: hidden; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #fff; color: #111; line-height: 1.6; }
 
-  /* Rodapé no topo / menu animado */
+  /* Header profissional */
   header {
     position: sticky;
     top: 0;
     width: 100%;
-    background: linear-gradient(90deg, #0af, #f0f, #fa0);
-    color: #fff;
+    background: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #e0e0e0;
     z-index: 1000;
   }
   header h1 {
     font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    font-weight: 600;
+    color: #111;
   }
   nav ul {
     display: flex;
@@ -35,45 +33,46 @@
     gap: 2rem;
   }
   nav ul li a {
-    color: #fff;
-    font-weight: bold;
+    color: #111;
+    font-weight: 500;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
     transition: all 0.3s;
     position: relative;
   }
-  nav ul li a::before {
+  nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 3px;
-    bottom: 0;
+    height: 2px;
+    background: #0af;
     left: 0;
-    background-color: #ff0;
+    bottom: 0;
     transition: width 0.3s;
-    border-radius: 2px;
   }
-  nav ul li a:hover::before { width: 100%; }
-  nav ul li a:hover { transform: translateY(-5px) scale(1.2); color: #0ff; }
+  nav ul li a:hover::after { width: 100%; }
+  nav ul li a:hover { color: #0af; transform: translateY(-2px); }
 
   /* Página inicial / Sobre */
   .sobre {
-    padding: 5rem 2rem;
+    padding: 6rem 2rem 4rem;
     text-align: center;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  }
+  .sobre h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
     color: #111;
-    animation: backgroundAnim 10s ease infinite;
   }
-  @keyframes backgroundAnim {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  .sobre p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    color: #444;
   }
-  .sobre h2 { font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px #fff; }
-  .sobre p { max-width: 700px; margin: auto; font-size: 1.1rem; line-height: 1.6; }
 
-  /* Produtos */
+  /* Produtos estilo Apple */
   .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -82,23 +81,22 @@
     padding: 4rem 2rem;
   }
   .produto {
-    width: 250px;
-    height: 350px;
-    perspective: 1200px;
+    width: 260px;
+    height: 360px;
+    perspective: 1000px;
   }
   .produto-inner {
     width: 100%; height: 100%;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: transform 0.7s, box-shadow 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.5s, box-shadow 0.3s;
     transform-style: preserve-3d;
     position: relative;
-    overflow: hidden;
   }
   .produto:hover .produto-inner {
-    transform: rotateY(20deg) rotateX(10deg) translateY(-10px);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.4);
+    transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   }
   .produto img {
     width: 100%;
@@ -106,25 +104,26 @@
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    animation: float 3s ease-in-out infinite alternate;
-  }
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-10px); }
   }
   .produto h3 {
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 0.7rem;
     font-size: 1.2rem;
+    font-weight: 600;
     color: #0af;
-    text-shadow: 1px 1px 3px #333;
   }
-  .produto p { text-align: center; font-size: 0.9rem; padding: 0 0.5rem; }
+  .produto p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0 0.5rem;
+    margin-top: 0.3rem;
+  }
 
-  /* Seções simples */
+  /* Seções */
   section { padding: 4rem 2rem; text-align: center; }
-  #servicos { background: #c0f0ff; border-radius: 20px; margin: 2rem; }
-  #contato { background: #ffd0f0; border-radius: 20px; margin: 2rem; }
+  #servicos { background: #f9f9f9; border-radius: 12px; margin: 2rem auto; max-width: 900px; }
+  #contato { background: #f1f1f1; border-radius: 12px; margin: 2rem auto; max-width: 900px; }
 
   /* Footer */
   footer {
@@ -133,8 +132,6 @@
     background: #111;
     color: #fff;
     margin-top: 2rem;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
   }
 </style>
 </head>
@@ -152,37 +149,35 @@
   </nav>
 </header>
 
-<!-- Página inicial -->
 <section id="inicio" class="sobre">
   <h2>Bem-vindo à Ezra Tec 3D!</h2>
-  <p>Na Ezra Tec 3D, unimos tecnologia, criatividade e diversão. Produzimos objetos lúdicos, utilidades e brinquedos em 3D, com atenção a cada detalhe. Aqui, cada produto é uma experiência única!</p>
+  <p>Na Ezra Tec 3D, unimos tecnologia, criatividade e precisão. Produzimos objetos lúdicos, utilidades e brinquedos em 3D com atenção máxima aos detalhes, trazendo soluções inovadoras e experiências únicas aos nossos clientes.</p>
 </section>
 
-<!-- Produtos -->
 <section id="produtos" class="produtos">
+  <!-- Dragão 3D -->
   <div class="produto">
     <div class="produto-inner">
-      <img src="https://via.placeholder.com/250x245.png?text=Dragao+3D" alt="Dragão 3D">
+      <img src="https://i.imgur.com/7fJ1yKX.png" alt="Dragão 3D">
       <h3>Dragão 3D</h3>
-      <p>Brinquedo colorido impresso em 3D, com detalhes incríveis e animação leve.</p>
+      <p>Brinquedo impresso em 3D, cheio de detalhes e cores precisas, perfeito para decoração e coleção.</p>
     </div>
   </div>
+  <!-- Produto extra -->
   <div class="produto">
     <div class="produto-inner">
-      <img src="https://via.placeholder.com/250x245.png?text=Robot+3D" alt="Robot 3D">
+      <img src="https://via.placeholder.com/260x245.png?text=Robot+3D" alt="Robot 3D">
       <h3>Robot 3D</h3>
-      <p>Robô divertido e interativo, perfeito para decoração e diversão.</p>
+      <p>Robô lúdico impresso em 3D, elegante e moderno.</p>
     </div>
   </div>
 </section>
 
-<!-- Serviços -->
 <section id="servicos">
   <h2>Nossos Serviços</h2>
-  <p>Formatação, manutenção, gráfica rápida, impressões 3D personalizadas e muito mais!</p>
+  <p>Formatação, manutenção, gráfica rápida, vendas e impressões 3D personalizadas de alta qualidade.</p>
 </section>
 
-<!-- Contato -->
 <section id="contato">
   <h2>Contato</h2>
   <p>Email: contato@ezratec3d.com.br | Tel: +55 61 98107-8614</p>
@@ -196,34 +191,33 @@
   const links = document.querySelectorAll('#menu-topo a');
 
   links.forEach(link => {
-    // Scroll suave
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.querySelector(link.getAttribute('href'));
       target.scrollIntoView({ behavior: 'smooth' });
     });
-    // Hover interativo
+
     link.addEventListener('mouseenter', () => {
-      link.style.transform = 'translateY(-5px) scale(1.2)';
-      link.style.color = '#ff0';
+      link.style.color = '#0af';
+      link.style.transform = 'translateY(-2px)';
     });
+
     link.addEventListener('mouseleave', () => {
-      link.style.transform = 'translateY(0) scale(1)';
-      link.style.color = '#fff';
+      link.style.color = '#111';
+      link.style.transform = 'translateY(0)';
     });
   });
 
-  // Destaque de seção atual
   window.addEventListener('scroll', () => {
-    let fromTop = window.scrollY + 120;
+    const fromTop = window.scrollY + 100;
     links.forEach(link => {
       const section = document.querySelector(link.getAttribute('href'));
       if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-        link.style.color = '#0ff';
-        link.style.fontWeight = 'bold';
+        link.style.color = '#0af';
+        link.style.fontWeight = '600';
       } else {
-        link.style.color = '#fff';
-        link.style.fontWeight = 'normal';
+        link.style.color = '#111';
+        link.style.fontWeight = '500';
       }
     });
   });
