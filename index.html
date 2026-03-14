@@ -1,34 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ezra 3D</title>
 
 <style>
 
 body{
-font-family:Arial;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
 background:#ffffff;
 text-align:center;
-margin:0;
+
+/* textura tipo camadas de impressão 3D */
+background-image: repeating-linear-gradient(
+45deg,
+#f2f2f2,
+#f2f2f2 2px,
+#ffffff 2px,
+#ffffff 8px
+);
 }
 
 header{
-padding:60px;
+padding:70px 20px;
 }
 
-.produto{
-margin-top:40px;
+h1{
+font-size:50px;
+margin:0;
+}
+
+p{
+color:#666;
+}
+
+.produtos{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+width:260px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
 }
 
 .botao{
 display:inline-block;
-margin-top:20px;
+margin-top:15px;
 padding:12px 20px;
 background:#0071e3;
 color:white;
 text-decoration:none;
 border-radius:8px;
+font-weight:bold;
+}
+
+.botao:hover{
+background:#005dc1;
+}
+
+footer{
+padding:40px;
+color:#777;
 }
 
 </style>
@@ -40,22 +86,31 @@ border-radius:8px;
 <header>
 
 <h1>Ezra 3D</h1>
-
-<p>Produtos feitos em Impressão 3D</p>
+<p>Produtos criados com Impressão 3D</p>
 
 </header>
 
-<div class="produto">
+<section class="produtos">
 
-<img src="https://via.placeholder.com/300">
+<div class="card">
 
-<h2>Produto de Impressão 3D</h2>
+<img src="dragao-articulado.png">
 
-<a class="botao" href="https://www.mercadolivre.com.br">
+<h2>Dragão Articulado</h2>
+
+<a class="botao" href="COLE_AQUI_SEU_LINK_DO_MERCADO_LIVRE">
 Comprar no Mercado Livre
 </a>
 
 </div>
+
+</section>
+
+<footer>
+
+Ezra 3D • Produtos feitos em Impressão 3D
+
+</footer>
 
 </body>
 </html>
