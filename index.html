@@ -1,15 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ezra 3D</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:#111;
+background:#ffffff;
+
+background-image: repeating-linear-gradient(
+45deg,
+#f2f2f2,
+#f2f2f2 2px,
+#ffffff 2px,
+#ffffff 8px
+);
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+}
+
+header h1{
+font-size:55px;
+margin:0;
+}
+
+header p{
+font-size:20px;
+color:#666;
+}
+
+.produtos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+padding:50px;
+}
+
+.card{
+background:white;
+width:260px;
+border-radius:18px;
+padding:20px;
+text-align:center;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+border-radius:12px;
+}
+
+.card h3{
+margin-top:15px;
+}
+
+.botao{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+
+background:#0071e3;
+color:white;
+
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.botao:hover{
+background:#005dc1;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+font-size:14px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Ezra 3D</h1>
-<p>Meu site de impressão 3D está funcionando.</p>
+<header>
 
-<a href="https://www.mercadolivre.com.br">Ir para meus produtos</a>
+<h1>Ezra 3D</h1>
+
+<p>Produtos criados com Impressão 3D</p>
+
+</header>
+
+<section class="produtos">
+
+<div class="card">
+
+<img src="imagens/dragao.jpg">
+
+<h3>Dragão Articulado</h3>
+
+<a class="botao" href="LINK_DO_PRODUTO">Comprar</a>
+
+</div>
+
+
+<div class="card">
+
+<img src="imagens/suporte.jpg">
+
+<h3>Suporte para Celular</h3>
+
+<a class="botao" href="LINK_DO_PRODUTO">Comprar</a>
+
+</div>
+
+
+<div class="card">
+
+<img src="imagens/boneco.jpg">
+
+<h3>Boneco Articulado</h3>
+
+<a class="botao" href="LINK_DO_PRODUTO">Comprar</a>
+
+</div>
+
+</section>
+
+<footer>
+
+Ezra 3D • Produtos feitos em Impressão 3D
+
+</footer>
 
 </body>
+
 </html>
