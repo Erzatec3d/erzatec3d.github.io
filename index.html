@@ -12,26 +12,25 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:#111;
 
-/* fundo branco */
+/* fundo branco com linhas de filamento */
+
 background-color:#ffffff;
 
-/* textura tipo linhas de impressão 3D */
 background-image:
 repeating-linear-gradient(
 45deg,
-#f2f2f2,
-#f2f2f2 2px,
+#f1f1f1,
+#f1f1f1 2px,
 #ffffff 2px,
 #ffffff 8px
 );
-
 }
 
 /* topo */
 
 header{
 text-align:center;
-padding:90px 20px;
+padding:80px 20px;
 }
 
 header h1{
@@ -45,27 +44,25 @@ color:#666;
 margin-top:10px;
 }
 
-/* área de produtos */
+/* produtos */
 
 .produtos{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:40px;
-padding:60px;
+padding:50px;
 }
 
-/* cards */
+/* card */
 
 .card{
 background:white;
-width:240px;
+width:250px;
 border-radius:20px;
 padding:20px;
 text-align:center;
-
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
-
 transition:0.3s;
 }
 
@@ -76,8 +73,24 @@ box-shadow:0 20px 40px rgba(0,0,0,0.15);
 
 .card img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
 }
 
 .card h3{
-margin-top:
+margin-top:15px;
+font-size:18px;
+}
+
+/* botão */
+
+.botao{
+display:inline-block;
+margin-top:15px;
+padding:12px 20px;
+background:#0071e3;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+transition:0.2s;
+}
