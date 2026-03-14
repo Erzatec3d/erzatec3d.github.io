@@ -153,12 +153,19 @@ footer{
 </section>
 
 <section id="produtos" class="produtos">
-<div class="card">
-<img src="dragao-articulado.png.png" alt="Dragão Articulado" id="dragao">
-<h2>Dragão Articulado</h2>
-<a class="botao" href="#">Comprar no Mercado Livre</a>
-</div>
-<!-- Você pode adicionar mais cards aqui -->
+
+  <div class="card">
+    <img src="dragao-articulado.png.png" alt="Dragão Articulado" id="dragao">
+    <h2>Dragão Articulado</h2>
+    <a class="botao" href="#">Comprar no Mercado Livre</a>
+  </div>
+
+  <div class="card">
+    <img src="chaveiro.png.png" alt="Chaveiro 3D" id="chaveiro">
+    <h2>Chaveiro 3D</h2>
+    <a class="botao" href="#">Comprar no Mercado Livre</a>
+  </div>
+
 </section>
 
 <section id="servicos">
@@ -208,12 +215,18 @@ secoes.forEach(secao => {
   });
 });
 
-/* Dragão girando lentamente (efeito 3D) */
+/* Dragão e Chaveiro girando lentamente (efeito 3D) */
 const dragao = document.getElementById('dragao');
-let angle = 0;
+const chaveiro = document.getElementById('chaveiro');
+let angleDragao = 0;
+let angleChaveiro = 0;
+
 setInterval(() => {
-  angle += 0.3; // velocidade da rotação
-  dragao.style.transform = `rotateY(${angle}deg)`;
+  angleDragao += 0.3;
+  dragao.style.transform = `rotateY(${angleDragao}deg)`;
+
+  angleChaveiro += 0.3;
+  chaveiro.style.transform = `rotateY(${angleChaveiro}deg)`;
 }, 30);
 </script>
 
