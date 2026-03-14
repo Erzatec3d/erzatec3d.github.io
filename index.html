@@ -1,126 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ezra Tec 3D</title>
+
+<title>Ezra 3D</title>
+
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-  
-  /* Fundo com filamentos */
-  body { 
-    background: url('/mnt/data/fundo-filamentos.png') repeat; 
-    color:#111; 
-    line-height:1.6;
-  }
 
-  header {
-    position: sticky; top:0; width:100%; background:rgba(255,255,255,0.95); display:flex; justify-content:space-between; align-items:center; padding:1rem 3rem; border-bottom:1px solid #e0e0e0; z-index:1000;
-    backdrop-filter: blur(5px);
-  }
-  header h1 { font-size:1.8rem; font-weight:600; color:#111; }
-  nav ul { display:flex; list-style:none; gap:2rem; }
-  nav ul li a { color:#111; font-weight:500; text-decoration:none; padding:0.5rem 0.8rem; border-radius:8px; transition:all 0.3s; position:relative; }
-  nav ul li a::after { content:''; position:absolute; width:0; height:2px; background:#0af; left:0; bottom:0; transition:width 0.3s; }
-  nav ul li a:hover::after { width:100%; }
-  nav ul li a:hover { color:#0af; transform:translateY(-2px); }
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
 
-  .sobre { padding:6rem 2rem 4rem; text-align:center; max-width:900px; margin:auto; }
-  .sobre h2 { font-size:2.5rem; margin-bottom:1rem; font-weight:600; color:#111; }
-  .sobre p { font-size:1.1rem; color:#444; }
+  /* Fundo de filamentos coloridos como você pediu antes */
+  background:#f5f5f7;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ececec,
+    #ececec 2px,
+    #f5f5f7 2px,
+    #f5f5f7 8px
+  );
+}
 
-  .produtos { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; padding:4rem 2rem; }
-  .produto { width:260px; height:360px; perspective:1000px; }
-  .produto-inner { width:100%; height:100%; background:#fff; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:transform 0.5s, box-shadow 0.3s; transform-style:preserve-3d; display:flex; flex-direction:column; overflow:hidden; }
-  .produto:hover .produto-inner { transform:rotateY(10deg) rotateX(5deg) translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
-  .produto img { width:100%; height:70%; object-fit:contain; border-top-left-radius:15px; border-top-right-radius:15px; background:#f5f5f5; }
-  .produto-text { padding:0.5rem 1rem; flex-grow:1; display:flex; flex-direction:column; justify-content:center; text-align:center; }
-  .produto h3 { font-size:1.2rem; font-weight:600; color:#0af; margin-bottom:0.3rem; }
-  .produto p { font-size:0.9rem; color:#666; }
+/* container */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px;
+  background:white;
+  border-radius:20px;
+  margin-top:40px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+  border:1px solid #e5e5e5;
+}
 
-  section { padding:4rem 2rem; text-align:center; }
-  #servicos { background:#fff; border-radius:12px; margin:2rem auto; max-width:900px; box-shadow:0 4px 20px rgba(0,0,0,0.05);}
-  #contato { background:#fff; border-radius:12px; margin:2rem auto; max-width:900px; box-shadow:0 4px 20px rgba(0,0,0,0.05);}
+/* topo */
+header{
+  text-align:center;
+  padding-bottom:30px;
+  border-bottom:1px solid #eee;
+}
 
-  footer { text-align:center; padding:2rem; background:#111; color:#fff; margin-top:2rem; }
+header h1{
+  font-size:50px;
+  margin:0;
+}
+
+header p{
+  color:#777;
+}
+
+/* produtos */
+.produtos{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  padding-top:40px;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  width:260px;
+  padding:20px;
+  text-align:center;
+  border:1px solid #eee;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.35s;
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.03);
+  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+}
+
+.botao{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 22px;
+  background:#0071e3;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.botao:hover{
+  background:#005dc1;
+}
+
+/* rodapé */
+footer{
+  margin-top:40px;
+  border-top:1px solid #eee;
+  padding-top:20px;
+  text-align:center;
+}
+
+/* menu rodapé */
+.footer-menu{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-bottom:15px;
+}
+
+.footer-item{
+  cursor:pointer;
+  color:#666;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.footer-item:hover{
+  color:#0071e3;
+}
+
+.copyright{
+  font-size:14px;
+  color:#999;
+}
+
 </style>
+
 </head>
+
 <body>
 
+<div class="container">
+
 <header>
-  <h1>Ezra Tec 3D</h1>
-  <nav>
-    <ul id="menu-topo">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#produtos">Produtos</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
+
+<h1>Ezra 3D</h1>
+<p>Produtos criados com Impressão 3D</p>
+
 </header>
 
-<section id="inicio" class="sobre">
-  <h2>Bem-vindo à Ezra Tec 3D!</h2>
-  <p>Na Ezra Tec 3D, unimos tecnologia, criatividade e precisão. Produzimos objetos lúdicos, utilidades e brinquedos em 3D com atenção máxima aos detalhes, trazendo soluções inovadoras e experiências únicas aos nossos clientes.</p>
-</section>
+<section class="produtos">
 
-<section id="produtos" class="produtos">
-  <div class="produto">
-    <div class="produto-inner">
-      <img src="/mnt/data/dragao-articulado.png.png" alt="Dragão 3D">
-      <div class="produto-text">
-        <h3>Dragão Articulado</h3>
-        <p>Dragão impresso em 3D, articulado e colorido, perfeito para coleção e decoração.</p>
-      </div>
-    </div>
-  </div>
-  <div class="produto">
-    <div class="produto-inner">
-      <img src="https://via.placeholder.com/260x245.png?text=Robot+3D" alt="Robot 3D">
-      <div class="produto-text">
-        <h3>Robot 3D</h3>
-        <p>Robô impresso em 3D, moderno e elegante.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="card">
 
-<section id="servicos">
-  <h2>Nossos Serviços</h2>
-  <p>Formatação, manutenção, gráfica rápida, vendas e impressões 3D personalizadas de alta qualidade.</p>
-</section>
+<!-- Dragão correto -->
+<img src="/mnt/data/dragao-articulado.png.png" alt="Dragão Articulado">
 
-<section id="contato">
-  <h2>Contato</h2>
-  <p>Email: contato@ezratec3d.com.br | Tel: +55 61 98107-8614</p>
+<h2>Dragão Articulado</h2>
+
+<a class="botao" href="#">
+Comprar no Mercado Livre
+</a>
+
+</div>
+
 </section>
 
 <footer>
-  &copy; 2026 Ezra Tec 3D. Todos os direitos reservados.
+
+<div class="footer-menu">
+
+<div class="footer-item">Início</div>
+<div class="footer-item">Produtos</div>
+<div class="footer-item">Contato</div>
+
+</div>
+
+<div class="copyright">
+© Ezra 3D • Impressão 3D
+</div>
+
 </footer>
 
+</div>
+
 <script>
-const links = document.querySelectorAll('#menu-topo a');
-links.forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    const target=document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({behavior:'smooth'});
+
+/* efeito extra ao passar o mouse */
+const itens = document.querySelectorAll(".footer-item");
+
+itens.forEach(item => {
+
+  item.addEventListener("mouseover", function(){
+    this.style.transform="scale(1.1)";
   });
-  link.addEventListener('mouseenter',()=>{link.style.color='#0af';link.style.transform='translateY(-2px)';});
-  link.addEventListener('mouseleave',()=>{link.style.color='#111';link.style.transform='translateY(0)';});
+
+  item.addEventListener("mouseout", function(){
+    this.style.transform="scale(1)";
+  });
+
 });
 
-window.addEventListener('scroll',()=>{
-  const fromTop=window.scrollY+100;
-  links.forEach(link=>{
-    const section=document.querySelector(link.getAttribute('href'));
-    if(section.offsetTop<=fromTop && section.offsetTop+section.offsetHeight>fromTop){
-      link.style.color='#0af'; link.style.fontWeight='600';
-    } else { link.style.color='#111'; link.style.fontWeight='500'; }
-  });
-});
 </script>
 
 </body>
+
 </html>
