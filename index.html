@@ -27,11 +27,17 @@ header{
   background:rgba(255,255,255,0.95);
   backdrop-filter: blur(5px);
   display:flex;
-  justify-content:center; /* centralizado */
+  justify-content:center;
   align-items:center;
   padding:1rem 3rem;
   border-bottom:1px solid #e0e0e0;
   z-index:1000;
+}
+header img.logo{
+  height:50px;
+  margin-right:1rem;
+  position:absolute;
+  left:20px; /* canto esquerdo */
 }
 header h1{
   font-size:2rem;
@@ -139,6 +145,7 @@ footer{
 <body>
 
 <header>
+<img src="logo.png.jpeg" class="logo" alt="Logo Ezra Tec 3D">
 <h1>Ezra Tec 3D</h1>
 <nav>
 <ul>
@@ -224,4 +231,3 @@ secoes.forEach(secao => {
 
 </body>
 </html>
-
