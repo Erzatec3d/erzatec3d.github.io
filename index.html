@@ -46,7 +46,7 @@ nav ul{
   gap:2rem;
 }
 nav ul li a{
-  color:#111;
+  color:#111; /* cor normal da letra */
   font-weight:500;
   text-decoration:none;
   padding:0.5rem 0.8rem;
@@ -54,10 +54,12 @@ nav ul li a{
   transition: all 0.3s;
   position:relative;
   border:2px solid transparent; /* borda inicial invisível */
+  background-color: transparent; /* fundo transparente inicial */
 }
 nav ul li a:hover{
-  color:#0071e3;
-  border:2px solid #ccc; /* borda cinza ao passar o mouse */
+  color:#111; /* mantém a cor da letra */
+  background-color: #ccc; /* fundo cinza sólido */
+  border:2px solid #ccc; /* borda cinza preenchida */
 }
 
 /* container */
@@ -189,7 +191,7 @@ footer{
 </div>
 
 <script>
-/* Scroll suave e hover flutuante + borda nos links do menu topo */
+/* Scroll suave e hover flutuante nos links do menu topo */
 const links = document.querySelectorAll('nav ul li a');
 links.forEach(link=>{
   link.addEventListener('click', e=>{
@@ -199,7 +201,7 @@ links.forEach(link=>{
   });
   link.addEventListener('mouseenter', ()=>{
     link.style.transform='translateY(-10px)'; // flutua
-    link.style.transition='transform 0.3s, border 0.3s';
+    link.style.transition='transform 0.3s, background-color 0.3s, border 0.3s';
   });
   link.addEventListener('mouseleave', ()=>{
     link.style.transform='translateY(0)'; // volta
@@ -222,3 +224,4 @@ secoes.forEach(secao => {
 
 </body>
 </html>
+
