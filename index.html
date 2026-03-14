@@ -13,64 +13,111 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-text-align:center;
-background:#ffffff;
+background:#f5f5f7;
+
+/* textura tipo camadas da impressão */
 
 background-image: repeating-linear-gradient(
 45deg,
-#f2f2f2,
-#f2f2f2 2px,
-#ffffff 2px,
-#ffffff 8px
+#ececec,
+#ececec 2px,
+#f5f5f7 2px,
+#f5f5f7 8px
 );
+
+}
+
+/* container central */
+
+.container{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:40px;
+
+background:white;
+
+border-radius:20px;
+
+margin-top:40px;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.1);
+
+border:1px solid #e5e5e5;
+
 }
 
 /* topo */
 
 header{
-padding:70px 20px;
+
+text-align:center;
+
+padding-bottom:30px;
+
+border-bottom:1px solid #eee;
+
 }
 
-h1{
+header h1{
+
 font-size:50px;
+
 margin:0;
+
 }
 
-p{
-color:#666;
+header p{
+
+color:#777;
+
 }
 
-/* área produtos */
+/* produtos */
 
 .produtos{
+
 display:flex;
+
 justify-content:center;
-padding:40px;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+padding-top:40px;
+
 }
 
-/* card produto */
+/* card */
 
 .card{
 
-background:white;
+background:#fff;
 
-width:270px;
+border-radius:16px;
+
+width:260px;
 
 padding:20px;
 
-border-radius:15px;
+text-align:center;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border:1px solid #eee;
 
-transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+transition:0.35s;
 
 }
 
 .card:hover{
 
-transform:translateY(-10px) scale(1.04);
+transform:translateY(-12px) scale(1.03);
 
-box-shadow:0 20px 40px rgba(0,0,0,0.2);
+box-shadow:0 25px 50px rgba(0,0,0,0.15);
 
 }
 
@@ -80,7 +127,7 @@ box-shadow:0 20px 40px rgba(0,0,0,0.2);
 
 width:100%;
 
-border-radius:10px;
+border-radius:12px;
 
 transition:0.3s;
 
@@ -100,7 +147,7 @@ display:inline-block;
 
 margin-top:15px;
 
-padding:12px 20px;
+padding:12px 22px;
 
 background:#0071e3;
 
@@ -126,9 +173,13 @@ background:#005dc1;
 
 footer{
 
-padding:40px;
+text-align:center;
+
+margin-top:40px;
 
 color:#777;
+
+font-size:14px;
 
 }
 
@@ -138,11 +189,13 @@ color:#777;
 
 <body>
 
+<div class="container">
+
 <header>
 
 <h1>Ezra 3D</h1>
 
-<p>Produtos feitos em Impressão 3D</p>
+<p>Produtos criados com Impressão 3D</p>
 
 </header>
 
@@ -154,7 +207,7 @@ color:#777;
 
 <h2>Dragão Articulado</h2>
 
-<a class="botao" href="COLE_AQUI_SEU_LINK">
+<a class="botao" href="COLE_SEU_LINK_AQUI">
 Comprar no Mercado Livre
 </a>
 
@@ -168,9 +221,11 @@ Ezra 3D • Impressão 3D
 
 </footer>
 
+</div>
+
 <script>
 
-/* animação ao carregar */
+/* animação de entrada */
 
 document.body.style.opacity="0";
 
