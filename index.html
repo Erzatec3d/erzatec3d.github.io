@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ezra 3D</title>
 
 <style>
@@ -10,10 +13,9 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#ffffff;
 text-align:center;
+background:#ffffff;
 
-/* textura tipo camadas de impressão 3D */
 background-image: repeating-linear-gradient(
 45deg,
 #f2f2f2,
@@ -22,6 +24,8 @@ background-image: repeating-linear-gradient(
 #ffffff 8px
 );
 }
+
+/* topo */
 
 header{
 padding:70px 20px;
@@ -36,45 +40,96 @@ p{
 color:#666;
 }
 
+/* área produtos */
+
 .produtos{
 display:flex;
 justify-content:center;
-gap:40px;
-flex-wrap:wrap;
 padding:40px;
 }
 
+/* card produto */
+
 .card{
+
 background:white;
+
+width:270px;
+
 padding:20px;
+
 border-radius:15px;
-width:260px;
+
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
 }
+
+.card:hover{
+
+transform:translateY(-10px) scale(1.04);
+
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+
+}
+
+/* imagem */
 
 .card img{
+
 width:100%;
+
 border-radius:10px;
+
+transition:0.3s;
+
 }
 
+.card:hover img{
+
+transform:scale(1.05);
+
+}
+
+/* botão */
+
 .botao{
+
 display:inline-block;
+
 margin-top:15px;
+
 padding:12px 20px;
+
 background:#0071e3;
+
 color:white;
+
 text-decoration:none;
+
 border-radius:8px;
+
 font-weight:bold;
+
+transition:0.3s;
+
 }
 
 .botao:hover{
+
 background:#005dc1;
+
 }
 
+/* rodapé */
+
 footer{
+
 padding:40px;
+
 color:#777;
+
 }
 
 </style>
@@ -86,7 +141,8 @@ color:#777;
 <header>
 
 <h1>Ezra 3D</h1>
-<p>Produtos criados com Impressão 3D</p>
+
+<p>Produtos feitos em Impressão 3D</p>
 
 </header>
 
@@ -94,11 +150,11 @@ color:#777;
 
 <div class="card">
 
-<img src="dragao-articulado.png">
+<img src="dragao-articulado.png.png">
 
 <h2>Dragão Articulado</h2>
 
-<a class="botao" href="COLE_AQUI_SEU_LINK_DO_MERCADO_LIVRE">
+<a class="botao" href="COLE_AQUI_SEU_LINK">
 Comprar no Mercado Livre
 </a>
 
@@ -108,9 +164,26 @@ Comprar no Mercado Livre
 
 <footer>
 
-Ezra 3D • Produtos feitos em Impressão 3D
+Ezra 3D • Impressão 3D
 
 </footer>
 
+<script>
+
+/* animação ao carregar */
+
+document.body.style.opacity="0";
+
+window.onload=function(){
+
+document.body.style.transition="opacity 1s";
+
+document.body.style.opacity="1";
+
+}
+
+</script>
+
 </body>
+
 </html>
