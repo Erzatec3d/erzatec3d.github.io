@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ezra 3D</title>
 
 <style>
@@ -10,19 +13,17 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+background:#ffffff;
 color:#111;
 
-/* fundo branco com linhas de filamento */
+/* textura tipo linhas de filamento */
 
-background-color:#ffffff;
-
-background-image:
-repeating-linear-gradient(
+background-image: repeating-linear-gradient(
 45deg,
-#f1f1f1,
-#f1f1f1 2px,
+#f3f3f3,
+#f3f3f3 2px,
 #ffffff 2px,
-#ffffff 8px
+#ffffff 10px
 );
 }
 
@@ -44,7 +45,7 @@ color:#666;
 margin-top:10px;
 }
 
-/* produtos */
+/* área produtos */
 
 .produtos{
 display:flex;
@@ -57,23 +58,24 @@ padding:50px;
 /* card */
 
 .card{
-background:white;
+background:#ffffff;
 width:250px;
-border-radius:20px;
 padding:20px;
+border-radius:20px;
 text-align:center;
+
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-8px);
 }
 
 .card img{
 width:100%;
-border-radius:12px;
+border-radius:10px;
 }
 
 .card h3{
@@ -92,5 +94,85 @@ color:white;
 text-decoration:none;
 border-radius:10px;
 font-weight:bold;
-transition:0.2s;
 }
+
+.botao:hover{
+background:#005dc1;
+}
+
+/* rodapé */
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Ezra 3D</h1>
+
+<p>Produtos criados com Impressão 3D</p>
+
+</header>
+
+<section class="produtos">
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>Dragão Articulado</h3>
+
+<a class="botao" href="#">Comprar</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>Suporte para Celular</h3>
+
+<a class="botao" href="#">Comprar</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>Miniatura Decorativa</h3>
+
+<a class="botao" href="#">Comprar</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>Boneco Articulado</h3>
+
+<a class="botao" href="#">Comprar</a>
+
+</div>
+
+</section>
+
+<footer>
+
+Ezra 3D • Produtos feitos em Impressão 3D
+
+</footer>
+
+</body>
+
+</html>
