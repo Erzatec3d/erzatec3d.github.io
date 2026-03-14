@@ -38,7 +38,7 @@ header h1{
   margin:0;
   font-weight:bold;
   color:#111;
-  margin-right:2rem; /* espaço entre título e menu */
+  margin-right:2rem;
 }
 nav ul{
   display:flex;
@@ -187,7 +187,7 @@ footer{
 </div>
 
 <script>
-/* Scroll suave */
+/* Scroll suave e efeito flutuar nos links do menu topo */
 const links = document.querySelectorAll('nav ul li a');
 links.forEach(link=>{
   link.addEventListener('click', e=>{
@@ -195,12 +195,12 @@ links.forEach(link=>{
     const target=document.querySelector(link.getAttribute('href'));
     target.scrollIntoView({behavior:'smooth'});
   });
-  /* efeito de flutuar no menu topo */
   link.addEventListener('mouseenter', ()=>{
-    link.style.transform='translateY(-8px)';
+    link.style.transform='translateY(-10px)'; /* flutua */
+    link.style.transition='transform 0.3s';
   });
   link.addEventListener('mouseleave', ()=>{
-    link.style.transform='translateY(0)';
+    link.style.transform='translateY(0)'; /* volta */
   });
 });
 
