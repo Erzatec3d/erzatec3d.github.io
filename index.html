@@ -1,4 +1,4 @@
-```feito por samukinha duu grau
+```smr
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+/* RESET */
 
 *{
 box-sizing:border-box;
@@ -33,6 +35,7 @@ position:relative;
 /* LINHAS ANIMADAS */
 
 body::before{
+
 content:"";
 position:fixed;
 top:0;
@@ -59,19 +62,22 @@ transparent 60px
 );
 
 animation:moverFundo 35s linear infinite;
+
 z-index:-1;
+
 }
 
 @keyframes moverFundo{
 
-0%{transform:translate(0,0);}
-100%{transform:translate(-400px,-400px);}
+0%{ transform:translate(0,0); }
+100%{ transform:translate(-400px,-400px); }
 
 }
 
 /* HEADER */
 
 header{
+
 position:sticky;
 top:0;
 background:white;
@@ -82,10 +88,11 @@ gap:40px;
 padding:15px;
 border-bottom:1px solid #ddd;
 z-index:10;
+
 }
 
 .logo{
-height:100px;
+height:90px;
 }
 
 /* MENU */
@@ -109,8 +116,6 @@ nav a:hover{
 background:#eee;
 transform:translateY(-3px);
 }
-
-/* MENU MOBILE */
 
 .menu-btn{
 display:none;
@@ -149,8 +154,6 @@ section:hover{
 transform:translateY(-10px);
 box-shadow:0 25px 70px rgba(0,0,0,0.15);
 }
-
-/* TITULO */
 
 #inicio h2{
 font-size:3rem;
@@ -212,7 +215,7 @@ padding:12px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
-display:inline-block;
+display:block;
 position:relative;
 overflow:hidden;
 }
@@ -258,6 +261,23 @@ border:none;
 border-radius:12px;
 }
 
+/* AVALIAÇÕES */
+
+.avaliacoes{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.review{
+background:#f5f5f7;
+padding:20px;
+border-radius:12px;
+width:250px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
 /* WHATSAPP */
 
 .whatsapp{
@@ -277,36 +297,6 @@ text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-.menu-btn{
-display:block;
-}
-
-nav ul{
-display:none;
-flex-direction:column;
-background:white;
-position:absolute;
-top:80px;
-right:0;
-width:200px;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-nav ul.active{
-display:flex;
-}
-
-.carousel-track-container{
-width:260px;
-}
-
-}
-
 </style>
 
 </head>
@@ -317,20 +307,12 @@ width:260px;
 
 <img src="logo.png.jpeg" class="logo">
 
-<div class="menu-btn" onclick="toggleMenu()">
-<i class="fa-solid fa-bars"></i>
-</div>
-
 <nav>
-
 <ul id="menu">
-
 <li><a href="#inicio">Início</a></li>
 <li><a href="#produtos">Produtos</a></li>
 <li><a href="#servicos">Serviços</a></li>
-
 </ul>
-
 </nav>
 
 </header>
@@ -340,7 +322,6 @@ width:260px;
 <section id="inicio">
 
 <h2>Bem-vindo à Ezra Tec 3D</h2>
-
 <p>Produtos criados com tecnologia de impressão 3D.</p>
 
 </section>
@@ -370,7 +351,6 @@ width:260px;
 </div>
 
 </div>
-
 </div>
 
 <button onclick="mover(1)">›</button>
@@ -389,7 +369,7 @@ Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a e
 </p>
 
 <p>
-📍 Também temos uma <strong>loja física</strong> em Brasília Sobradinho.
+📍 Também temos uma <strong>loja física</strong> em Sobradinho.
 </p>
 
 <p>
@@ -409,13 +389,6 @@ Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a e
 src="https://www.google.com/maps?q=Brasilia+Sobradinho+2+AR+13+Conjunto+16+Lote+15+A&output=embed">
 </iframe>
 
-<br><br>
-
-<a class="botao" target="_blank"
-href="https://www.google.com/maps/search/?api=1&query=Brasilia+Sobradinho+2+AR+13+Conjunto+16+Lote+15+A">
-Abrir no Google Maps
-</a>
-
 </section>
 
 </div>
@@ -423,55 +396,6 @@ Abrir no Google Maps
 <a class="whatsapp" href="https://wa.me/5561981078614">
 <i class="fa-brands fa-whatsapp"></i>
 </a>
-
-<script>
-
-/* MENU HAMBURGUER */
-
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("active")
-}
-
-/* CARROSSEL */
-
-let pos=0
-
-function mover(d){
-
-const track=document.getElementById("track")
-
-pos+=d
-
-if(pos<0)pos=0
-if(pos>1)pos=1
-
-track.style.transform="translateX("+(-pos*290)+"px)"
-
-}
-
-/* ANIMAÇÃO DAS SEÇÕES */
-
-const sections=document.querySelectorAll("section")
-
-function animar(){
-
-const topo=window.scrollY + window.innerHeight - 100
-
-sections.forEach(sec=>{
-
-if(topo>sec.offsetTop){
-sec.classList.add("aparecer")
-}
-
-})
-
-}
-
-window.addEventListener("scroll",animar)
-
-animar()
-
-</script>
 
 </body>
 </html>
