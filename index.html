@@ -22,7 +22,6 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-
 background:linear-gradient(135deg,#f5f5f7,#e9ecf3,#f5f5f7);
 background-attachment:fixed;
 }
@@ -93,12 +92,21 @@ text-align:center;
 
 opacity:0;
 transform:translateY(40px);
-transition:.7s;
+transition:.4s ease;
 }
+
+/* seção aparece */
 
 section.aparecer{
 opacity:1;
 transform:translateY(0);
+}
+
+/* efeito levantar */
+
+section:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 70px rgba(0,0,0,0.15);
 }
 
 /* TITULOS */
@@ -158,7 +166,7 @@ transition:.4s;
 transform:scale(1.1);
 }
 
-/* BOTÃO */
+/* BOTÃO COM LUZ */
 
 .botao{
 margin-top:15px;
@@ -181,7 +189,12 @@ top:0;
 left:-100%;
 width:100%;
 height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.7),
+transparent
+);
 transition:.6s;
 }
 
@@ -189,7 +202,7 @@ transition:.6s;
 left:100%;
 }
 
-/* BOTÕES CARROSSEL */
+/* BOTÕES DO CARROSSEL */
 
 .carousel button{
 font-size:24px;
@@ -316,7 +329,9 @@ width:260px;
 
 <h3>Dragão Articulado</h3>
 
-<a class="botao" href="#">Comprar</a>
+<a class="botao" href="#">
+Comprar
+</a>
 
 </div>
 
@@ -326,7 +341,9 @@ width:260px;
 
 <h3>Chaveiro 3D</h3>
 
-<a class="botao" href="#">Comprar</a>
+<a class="botao" href="#">
+Comprar
+</a>
 
 </div>
 
@@ -355,9 +372,7 @@ width:260px;
 <p>Fale direto pelo WhatsApp.</p>
 
 <a class="botao" href="https://wa.me/5561981078614">
-
 Falar no WhatsApp
-
 </a>
 
 </section>
@@ -384,7 +399,7 @@ document.getElementById("menu").classList.toggle("active")
 
 }
 
-/* SCROLL SUAVE ENTRE PAGINAS */
+/* SCROLL SUAVE */
 
 document.querySelectorAll("nav a").forEach(link=>{
 
@@ -400,7 +415,7 @@ behavior:"smooth"
 
 })
 
-/* EFEITO JS NAS PAGINAS DO MENU */
+/* MENU FLUTUANTE */
 
 const paginas=document.querySelectorAll("nav a")
 
@@ -468,4 +483,4 @@ animar()
 </body>
 
 </html>
-```
+
