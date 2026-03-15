@@ -1,4 +1,4 @@
-```smr
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -69,8 +69,13 @@ z-index:-1;
 
 @keyframes moverFundo{
 
-0%{ transform:translate(0,0); }
-100%{ transform:translate(-400px,-400px); }
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-400px,-400px);
+}
 
 }
 
@@ -90,6 +95,8 @@ border-bottom:1px solid #ddd;
 z-index:10;
 
 }
+
+/* LOGO MAIOR */
 
 .logo{
 height:90px;
@@ -116,6 +123,8 @@ nav a:hover{
 background:#eee;
 transform:translateY(-3px);
 }
+
+/* MENU MOBILE */
 
 .menu-btn{
 display:none;
@@ -155,6 +164,8 @@ transform:translateY(-10px);
 box-shadow:0 25px 70px rgba(0,0,0,0.15);
 }
 
+/* TITULO */
+
 #inicio h2{
 font-size:3rem;
 margin-bottom:10px;
@@ -180,7 +191,7 @@ gap:30px;
 transition:0.5s;
 }
 
-/* CARD */
+/* CARD PRODUTO */
 
 .card{
 background:white;
@@ -297,6 +308,36 @@ text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+nav ul{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:80px;
+right:0;
+width:200px;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+nav ul.active{
+display:flex;
+}
+
+.carousel-track-container{
+width:260px;
+}
+
+}
+
 </style>
 
 </head>
@@ -307,12 +348,20 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 
 <img src="logo.png.jpeg" class="logo">
 
+<div class="menu-btn" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
 <nav>
+
 <ul id="menu">
+
 <li><a href="#inicio">Início</a></li>
 <li><a href="#produtos">Produtos</a></li>
 <li><a href="#servicos">Serviços</a></li>
+
 </ul>
+
 </nav>
 
 </header>
@@ -322,6 +371,7 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 <section id="inicio">
 
 <h2>Bem-vindo à Ezra Tec 3D</h2>
+
 <p>Produtos criados com tecnologia de impressão 3D.</p>
 
 </section>
@@ -339,18 +389,27 @@ box-shadow:0 5px 20px rgba(0,0,0,0.3);
 <div class="carousel-track" id="track">
 
 <div class="card">
+
 <img src="dragao-articulado.png.png">
+
 <h3>Dragão Articulado</h3>
+
 <a class="botao" href="#">Comprar</a>
+
 </div>
 
 <div class="card">
+
 <img src="chaveiro.png.png">
+
 <h3>Chaveiro 3D</h3>
+
 <a class="botao" href="#">Comprar</a>
+
 </div>
 
 </div>
+
 </div>
 
 <button onclick="mover(1)">›</button>
@@ -369,7 +428,7 @@ Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a e
 </p>
 
 <p>
-📍 Também temos uma <strong>loja física</strong> em Sobradinho.
+📍 Também temos uma <strong>loja física</strong> com serviços de tecnologia.
 </p>
 
 <p>
@@ -386,8 +445,33 @@ Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a e
 <h2>Onde Estamos</h2>
 
 <iframe class="mapa"
-src="https://www.google.com/maps?q=Brasilia+Sobradinho+2+AR+13+Conjunto+16+Lote+15+A&output=embed">
+src="https://www.google.com/maps?q=Brasil&output=embed">
 </iframe>
+
+</section>
+
+<section>
+
+<h2>Avaliações de Clientes</h2>
+
+<div class="avaliacoes">
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>Produto excelente e atendimento muito bom.</p>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>O dragão articulado ficou incrível!</p>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>Arrumaram meu notebook super rápido.</p>
+</div>
+
+</div>
 
 </section>
 
@@ -397,6 +481,56 @@ src="https://www.google.com/maps?q=Brasilia+Sobradinho+2+AR+13+Conjunto+16+Lote+
 <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<script>
+
+/* MENU HAMBURGUER */
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active")
+}
+
+/* CARROSSEL */
+
+let pos=0
+
+function mover(d){
+
+const track=document.getElementById("track")
+
+pos+=d
+
+if(pos<0)pos=0
+if(pos>1)pos=1
+
+track.style.transform="translateX("+(-pos*290)+"px)"
+
+}
+
+/* ANIMAÇÃO DAS SEÇÕES */
+
+const sections=document.querySelectorAll("section")
+
+function animar(){
+
+const topo=window.scrollY + window.innerHeight - 100
+
+sections.forEach(sec=>{
+
+if(topo>sec.offsetTop){
+sec.classList.add("aparecer")
+}
+
+})
+
+}
+
+window.addEventListener("scroll",animar)
+
+animar()
+
+</script>
+
 </body>
+
 </html>
 
