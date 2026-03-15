@@ -115,8 +115,7 @@ box-shadow:0 25px 70px rgba(0,0,0,0.15);
 font-size:3rem;
 }
 
-#servicos h2,
-#contato h2{
+#servicos h2{
 font-size:2.8rem;
 }
 
@@ -312,7 +311,6 @@ width:260px;
 <li><a href="#inicio">Início</a></li>
 <li><a href="#produtos">Produtos</a></li>
 <li><a href="#servicos">Serviços</a></li>
-<li><a href="#contato">Contato</a></li>
 
 </ul>
 
@@ -429,18 +427,6 @@ src="https://www.google.com/maps?q=Brasil&output=embed">
 
 </section>
 
-<section id="contato">
-
-<h2>Contato</h2>
-
-<p>Fale direto pelo WhatsApp.</p>
-
-<a class="botao" href="https://wa.me/5561981078614">
-Falar no WhatsApp
-</a>
-
-</section>
-
 <footer>
 
 © 2026 Ezra Tec 3D
@@ -469,21 +455,6 @@ e.preventDefault()
 document.querySelector(this.getAttribute("href")).scrollIntoView({
 behavior:"smooth"
 })
-})
-})
-
-/* MENU FLUTUANTE */
-
-const paginas=document.querySelectorAll("nav a")
-
-paginas.forEach(pagina=>{
-pagina.addEventListener("mouseenter",()=>{
-pagina.style.transform="translateY(-6px) scale(1.08)"
-pagina.style.boxShadow="0 4px 10px rgba(0,0,0,0.15)"
-})
-pagina.addEventListener("mouseleave",()=>{
-pagina.style.transform="translateY(0)"
-pagina.style.boxShadow="none"
 })
 })
 
