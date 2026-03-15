@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,7 +22,11 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(135deg,#f5f5f7,#e9ecf3,#f5f5f7);
+
+background:
+radial-gradient(circle at top,#e9ecf3,#f5f5f7),
+linear-gradient(135deg,#f5f5f7,#e9ecf3,#f5f5f7);
+
 background-attachment:fixed;
 }
 
@@ -95,14 +99,10 @@ transform:translateY(40px);
 transition:.4s ease;
 }
 
-/* seção aparece */
-
 section.aparecer{
 opacity:1;
 transform:translateY(0);
 }
-
-/* efeito levantar */
 
 section:hover{
 transform:translateY(-10px);
@@ -202,7 +202,7 @@ transition:.6s;
 left:100%;
 }
 
-/* BOTÕES DO CARROSSEL */
+/* BOTÕES CARROSSEL */
 
 .carousel button{
 font-size:24px;
@@ -212,7 +212,34 @@ width:45px;
 height:45px;
 border-radius:50%;
 cursor:pointer;
-flex-shrink:0;
+}
+
+/* MAPA */
+
+.mapa{
+width:100%;
+height:350px;
+border:none;
+border-radius:12px;
+margin-top:20px;
+}
+
+/* AVALIAÇÕES */
+
+.avaliacoes{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:20px;
+}
+
+.review{
+background:#f5f5f7;
+padding:20px;
+border-radius:12px;
+width:250px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* WHATSAPP */
@@ -232,14 +259,6 @@ align-items:center;
 justify-content:center;
 text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-color:#777;
 }
 
 /* RESPONSIVO */
@@ -329,9 +348,7 @@ width:260px;
 
 <h3>Dragão Articulado</h3>
 
-<a class="botao" href="#">
-Comprar
-</a>
+<a class="botao" href="#">Comprar</a>
 
 </div>
 
@@ -341,9 +358,7 @@ Comprar
 
 <h3>Chaveiro 3D</h3>
 
-<a class="botao" href="#">
-Comprar
-</a>
+<a class="botao" href="#">Comprar</a>
 
 </div>
 
@@ -361,7 +376,56 @@ Comprar
 
 <h2>Serviços</h2>
 
-<p>Impressões 3D personalizadas e criação de peças.</p>
+<p>
+Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a experiência da
+<strong>Sobradinho Notebooks</strong>.
+</p>
+
+<p>
+📍 Também temos uma <strong>loja física</strong> onde oferecemos diversos serviços de tecnologia.
+</p>
+
+<p>
+💻 Manutenção de notebooks e computadores<br>
+🔧 Formatação e otimização de sistemas<br>
+🖨️ Impressões e gráfica rápida<br>
+🧩 Projetos personalizados em impressão 3D
+</p>
+
+</section>
+
+<section>
+
+<h2>Onde Estamos</h2>
+
+<iframe class="mapa"
+src="https://www.google.com/maps?q=Brasil&output=embed">
+</iframe>
+
+</section>
+
+<section>
+
+<h2>Avaliações de Clientes</h2>
+
+<div class="avaliacoes">
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>Excelente atendimento e produtos de qualidade!</p>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>O dragão articulado é incrível, recomendo!</p>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>Levei meu notebook para manutenção e ficou perfeito.</p>
+</div>
+
+</div>
 
 </section>
 
@@ -394,25 +458,18 @@ Falar no WhatsApp
 /* MENU HAMBURGUER */
 
 function toggleMenu(){
-
 document.getElementById("menu").classList.toggle("active")
-
 }
 
 /* SCROLL SUAVE */
 
 document.querySelectorAll("nav a").forEach(link=>{
-
 link.addEventListener("click",function(e){
-
 e.preventDefault()
-
 document.querySelector(this.getAttribute("href")).scrollIntoView({
 behavior:"smooth"
 })
-
 })
-
 })
 
 /* MENU FLUTUANTE */
@@ -420,21 +477,14 @@ behavior:"smooth"
 const paginas=document.querySelectorAll("nav a")
 
 paginas.forEach(pagina=>{
-
 pagina.addEventListener("mouseenter",()=>{
-
 pagina.style.transform="translateY(-6px) scale(1.08)"
 pagina.style.boxShadow="0 4px 10px rgba(0,0,0,0.15)"
-
 })
-
 pagina.addEventListener("mouseleave",()=>{
-
-pagina.style.transform="translateY(0) scale(1)"
+pagina.style.transform="translateY(0)"
 pagina.style.boxShadow="none"
-
 })
-
 })
 
 /* CARROSSEL */
@@ -463,13 +513,9 @@ function animar(){
 const topo=window.scrollY + window.innerHeight - 100
 
 sections.forEach(sec=>{
-
 if(topo>sec.offsetTop){
-
 sec.classList.add("aparecer")
-
 }
-
 })
 
 }
@@ -483,4 +529,4 @@ animar()
 </body>
 
 </html>
-
+```
