@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ezra Tec 3D</title>
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 
-<!-- Ícones -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -19,14 +19,9 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f7;
-background-image:repeating-linear-gradient(
-45deg,
-#ececec,
-#ececec 2px,
-#f5f5f7 2px,
-#f5f5f7 8px
-);
+
+background:linear-gradient(135deg,#f5f5f7 0%,#e9ecf3 40%,#f5f5f7 100%);
+background-attachment:fixed;
 }
 
 /* HEADER */
@@ -37,17 +32,16 @@ top:0;
 background:white;
 display:flex;
 align-items:center;
-justify-content:space-between;
-padding:15px 25px;
+justify-content:center;
+gap:40px;
+padding:15px 20px;
 border-bottom:1px solid #ddd;
 z-index:1000;
 }
 
 .logo{
-height:65px;
+height:70px;
 }
-
-/* MENU */
 
 nav ul{
 display:flex;
@@ -61,13 +55,13 @@ nav a{
 text-decoration:none;
 color:#111;
 font-weight:bold;
-padding:6px 10px;
+padding:8px 12px;
 border-radius:8px;
-transition:0.3s;
+transition:.3s;
 }
 
 nav a:hover{
-background:#ccc;
+background:#dcdcdc;
 }
 
 /* HAMBURGUER */
@@ -97,13 +91,11 @@ box-shadow:0 15px 50px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-/* TITULO PRINCIPAL */
+/* TITULOS */
 
 #inicio h2{
 font-size:3rem;
 }
-
-/* TITULOS GRANDES */
 
 #servicos h2,
 #contato h2{
@@ -139,24 +131,53 @@ flex-direction:column;
 justify-content:space-between;
 min-height:420px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+overflow:hidden;
 }
 
 .card img{
 width:100%;
 border-radius:10px;
-object-fit:contain;
+transition:transform .35s ease;
 }
+
+.card:hover img{
+transform:scale(1.12);
+}
+
+/* BOTÃO COM EFEITO DE LUZ */
 
 .botao{
 margin-top:15px;
 background:#0071e3;
 color:white;
-padding:10px;
+padding:12px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
 display:block;
 text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.botao::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+transition:.6s;
+}
+
+.botao:hover::before{
+left:100%;
 }
 
 .botao:hover{
@@ -173,14 +194,6 @@ width:42px;
 height:42px;
 border-radius:50%;
 cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-color:#777;
 }
 
 /* WHATSAPP */
@@ -202,9 +215,21 @@ text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+color:#777;
+}
+
 /* RESPONSIVO */
 
 @media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
 
 nav ul{
 display:none;
@@ -222,16 +247,8 @@ nav ul.active{
 display:flex;
 }
 
-.menu-btn{
-display:block;
-}
-
 .carousel-track{
 width:260px;
-}
-
-.container{
-padding:20px;
 }
 
 }
@@ -251,10 +268,12 @@ padding:20px;
 
 <nav>
 <ul id="menu">
+
 <li><a href="#inicio">Início</a></li>
 <li><a href="#produtos">Produtos</a></li>
 <li><a href="#servicos">Serviços</a></li>
 <li><a href="#contato">Contato</a></li>
+
 </ul>
 </nav>
 
@@ -263,8 +282,11 @@ padding:20px;
 <div class="container">
 
 <section id="inicio">
+
 <h2>Bem-vindo à Ezra Tec 3D</h2>
-<p>Criações em impressão 3D com qualidade e criatividade.</p>
+
+<p>Produtos criados com tecnologia de impressão 3D.</p>
+
 </section>
 
 <section id="produtos">
@@ -278,15 +300,23 @@ padding:20px;
 <div class="carousel-track" id="track">
 
 <div class="card">
+
 <img src="dragao-articulado.png.png">
+
 <h3>Dragão Articulado</h3>
+
 <a class="botao" href="#">Comprar</a>
+
 </div>
 
 <div class="card">
+
 <img src="chaveiro.png.png">
+
 <h3>Chaveiro 3D</h3>
+
 <a class="botao" href="#">Comprar</a>
+
 </div>
 
 </div>
@@ -298,22 +328,26 @@ padding:20px;
 </section>
 
 <section id="servicos">
+
 <h2>Serviços</h2>
-<p>Formatação, manutenção, gráfica rápida e impressões 3D personalizadas.</p>
+
+<p>Impressões 3D personalizadas, manutenção e criação de peças.</p>
+
 </section>
 
 <section id="contato">
+
 <h2>Contato</h2>
-<p>Telefone: +55 61 98107-8614</p>
-<a class="botao" href="https://wa.me/5561981078614">Falar no WhatsApp</a>
+
+<p>Fale direto pelo WhatsApp.</p>
+
+<a class="botao" href="https://wa.me/5561981078614">
+Falar no WhatsApp
+</a>
+
 </section>
 
 <footer>
-
-<a href="https://youtube.com">YouTube</a> |
-<a href="https://mercadolivre.com.br">Mercado Livre</a>
-
-<br><br>
 
 © 2026 Ezra Tec 3D
 
@@ -336,24 +370,45 @@ document.getElementById("menu").classList.toggle("active")
 /* SCROLL SUAVE */
 
 document.querySelectorAll("nav a").forEach(link=>{
+
 link.addEventListener("click",function(e){
+
 e.preventDefault()
+
 document.querySelector(this.getAttribute("href")).scrollIntoView({
 behavior:"smooth"
 })
+
 })
+
+})
+
+/* ANIMAÇÃO MENU */
+
+const itens=document.querySelectorAll("nav a")
+
+itens.forEach(item=>{
+
+item.addEventListener("mouseover",function(){
+this.style.transform="translateY(-4px)"
+})
+
+item.addEventListener("mouseout",function(){
+this.style.transform="translateY(0)"
+})
+
 })
 
 /* CARROSSEL */
 
 let pos=0
 
-function mover(direcao){
+function mover(d){
 
 const track=document.getElementById("track")
 const total=track.children.length
 
-pos+=direcao
+pos+=d
 
 if(pos<0)pos=0
 if(pos>total-1)pos=total-1
