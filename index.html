@@ -1,14 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ezra Tec 3D</title>
 
-<link rel="icon" type="image/png" href="favicon-32x32.png">
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+*{box-sizing:border-box}
 
 body{
 margin:0;
@@ -32,21 +38,23 @@ background:white;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 30px;
+padding:15px 25px;
 border-bottom:1px solid #ddd;
 z-index:1000;
 }
 
 .logo{
-height:70px;
+height:65px;
 }
+
+/* MENU */
 
 nav ul{
 display:flex;
 gap:25px;
 list-style:none;
-padding:0;
 margin:0;
+padding:0;
 }
 
 nav a{
@@ -62,7 +70,7 @@ nav a:hover{
 background:#ccc;
 }
 
-/* MENU HAMBURGUER */
+/* HAMBURGUER */
 
 .menu-btn{
 display:none;
@@ -116,7 +124,8 @@ gap:20px;
 display:flex;
 gap:30px;
 overflow:hidden;
-width:600px;
+width:620px;
+transition:transform .4s ease;
 }
 
 .card{
@@ -135,6 +144,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.08);
 .card img{
 width:100%;
 border-radius:10px;
+object-fit:contain;
 }
 
 .botao{
@@ -145,6 +155,8 @@ padding:10px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
+display:block;
+text-align:center;
 }
 
 .botao:hover{
@@ -154,11 +166,11 @@ background:#005dc1;
 /* BOTÕES CARROSSEL */
 
 .carousel button{
-font-size:25px;
+font-size:24px;
 border:none;
 background:#eee;
-width:40px;
-height:40px;
+width:42px;
+height:42px;
 border-radius:50%;
 cursor:pointer;
 }
@@ -171,7 +183,7 @@ padding:20px;
 color:#777;
 }
 
-/* WHATSAPP FLUTUANTE */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -179,7 +191,7 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-font-size:28px;
+font-size:30px;
 width:60px;
 height:60px;
 border-radius:50%;
@@ -218,6 +230,10 @@ display:block;
 width:260px;
 }
 
+.container{
+padding:20px;
+}
+
 }
 
 </style>
@@ -229,7 +245,9 @@ width:260px;
 
 <img src="logo.png.jpeg" class="logo">
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
 
 <nav>
 <ul id="menu">
@@ -303,7 +321,9 @@ width:260px;
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/5561981078614">🟢</a>
+<a class="whatsapp" href="https://wa.me/5561981078614">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script>
 
@@ -313,6 +333,17 @@ function toggleMenu(){
 document.getElementById("menu").classList.toggle("active")
 }
 
+/* SCROLL SUAVE */
+
+document.querySelectorAll("nav a").forEach(link=>{
+link.addEventListener("click",function(e){
+e.preventDefault()
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+behavior:"smooth"
+})
+})
+})
+
 /* CARROSSEL */
 
 let pos=0
@@ -320,14 +351,14 @@ let pos=0
 function mover(direcao){
 
 const track=document.getElementById("track")
+const total=track.children.length
 
 pos+=direcao
 
-if(pos<0) pos=0
-if(pos>track.children.length-1) pos=track.children.length-1
+if(pos<0)pos=0
+if(pos>total-1)pos=total-1
 
 track.style.transform="translateX("+(-pos*290)+"px)"
-track.style.transition="0.4s"
 
 }
 
@@ -335,3 +366,4 @@ track.style.transition="0.4s"
 
 </body>
 </html>
+```
