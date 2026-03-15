@@ -15,24 +15,77 @@
 
 <style>
 
+/* RESET */
+
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-margin:0;
+
 font-family:Arial, Helvetica, sans-serif;
+overflow-x:hidden;
 
-background:
-radial-gradient(circle at top,#e9ecf3,#f5f5f7),
-linear-gradient(135deg,#f5f5f7,#e9ecf3,#f5f5f7);
+/* FUNDO */
 
-background-attachment:fixed;
+background:linear-gradient(120deg,#f5f7fb,#e9eef7,#f5f7fb);
+position:relative;
+
+}
+
+/* LINHAS ANIMADAS */
+
+body::before{
+
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:200%;
+height:200%;
+
+background-image:
+
+repeating-linear-gradient(
+60deg,
+rgba(0,0,0,0.04) 0px,
+rgba(0,0,0,0.04) 2px,
+transparent 2px,
+transparent 40px
+),
+
+repeating-linear-gradient(
+-60deg,
+rgba(0,0,0,0.03) 0px,
+rgba(0,0,0,0.03) 2px,
+transparent 2px,
+transparent 60px
+);
+
+animation:moverFundo 35s linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes moverFundo{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-400px,-400px);
+}
+
 }
 
 /* HEADER */
 
 header{
+
 position:sticky;
 top:0;
 background:white;
@@ -42,7 +95,8 @@ align-items:center;
 gap:40px;
 padding:15px;
 border-bottom:1px solid #ddd;
-z-index:1000;
+z-index:10;
+
 }
 
 .logo{
@@ -55,20 +109,27 @@ nav ul{
 display:flex;
 gap:25px;
 list-style:none;
-padding:0;
-margin:0;
 }
 
 nav a{
+
 text-decoration:none;
 color:#111;
 font-weight:bold;
 padding:8px 14px;
 border-radius:8px;
-transition:all .25s ease;
+transition:0.3s;
+
 }
 
-/* HAMBURGUER */
+nav a:hover{
+
+background:#eee;
+transform:translateY(-3px);
+
+}
+
+/* MENU MOBILE */
 
 .menu-btn{
 display:none;
@@ -79,24 +140,28 @@ cursor:pointer;
 /* CONTAINER */
 
 .container{
+
 max-width:1100px;
 margin:auto;
 padding:30px;
+
 }
 
 /* SEÇÕES */
 
 section{
+
 background:white;
 padding:60px 30px;
 border-radius:20px;
 margin-bottom:40px;
-box-shadow:0 15px 50px rgba(0,0,0,0.1);
+box-shadow:0 15px 50px rgba(0,0,0,0.08);
 text-align:center;
 
 opacity:0;
 transform:translateY(40px);
-transition:.4s ease;
+transition:0.6s;
+
 }
 
 section.aparecer{
@@ -105,69 +170,85 @@ transform:translateY(0);
 }
 
 section:hover{
+
 transform:translateY(-10px);
 box-shadow:0 25px 70px rgba(0,0,0,0.15);
+
 }
 
 /* TITULOS */
 
 #inicio h2{
 font-size:3rem;
+margin-bottom:10px;
 }
 
-#servicos h2{
-font-size:2.8rem;
+h2{
+margin-bottom:20px;
 }
 
 /* CARROSSEL */
 
 .carousel{
+
 display:flex;
 align-items:center;
 justify-content:center;
 gap:20px;
+
 }
 
 .carousel-track-container{
+
 overflow:hidden;
 width:600px;
+
 }
 
 .carousel-track{
+
 display:flex;
 gap:30px;
-transition:transform .5s;
+transition:0.5s;
+
 }
 
-/* CARD */
+/* CARD PRODUTO */
 
 .card{
+
 background:white;
 border:1px solid #eee;
 border-radius:16px;
 width:260px;
 padding:20px;
+
 display:flex;
 flex-direction:column;
 justify-content:space-between;
+
 min-height:420px;
+
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-overflow:hidden;
+
 }
 
 .card img{
+
 width:100%;
 border-radius:10px;
-transition:.4s;
+transition:0.4s;
+
 }
 
 .card:hover img{
 transform:scale(1.1);
 }
 
-/* BOTÃO COM LUZ */
+/* BOTÃO */
 
 .botao{
+
 margin-top:15px;
 background:#0071e3;
 color:white;
@@ -176,34 +257,39 @@ border-radius:8px;
 text-decoration:none;
 font-weight:bold;
 display:block;
-text-align:center;
 position:relative;
 overflow:hidden;
+
 }
 
 .botao::before{
+
 content:"";
 position:absolute;
 top:0;
 left:-100%;
 width:100%;
 height:100%;
+
 background:linear-gradient(
 120deg,
 transparent,
 rgba(255,255,255,0.7),
 transparent
 );
-transition:.6s;
+
+transition:0.6s;
+
 }
 
 .botao:hover::before{
 left:100%;
 }
 
-/* BOTÕES CARROSSEL */
+/* BOTÃO CARROSSEL */
 
 .carousel button{
+
 font-size:24px;
 border:none;
 background:#eee;
@@ -211,39 +297,45 @@ width:45px;
 height:45px;
 border-radius:50%;
 cursor:pointer;
+
 }
 
 /* MAPA */
 
 .mapa{
+
 width:100%;
 height:350px;
 border:none;
 border-radius:12px;
-margin-top:20px;
+
 }
 
 /* AVALIAÇÕES */
 
 .avaliacoes{
+
 display:flex;
 flex-wrap:wrap;
 gap:20px;
 justify-content:center;
-margin-top:20px;
+
 }
 
 .review{
+
 background:#f5f5f7;
 padding:20px;
 border-radius:12px;
 width:250px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
 }
 
 /* WHATSAPP */
 
 .whatsapp{
+
 position:fixed;
 bottom:20px;
 right:20px;
@@ -253,11 +345,14 @@ font-size:30px;
 width:60px;
 height:60px;
 border-radius:50%;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 text-decoration:none;
 box-shadow:0 5px 20px rgba(0,0,0,0.3);
+
 }
 
 /* RESPONSIVO */
@@ -269,6 +364,7 @@ display:block;
 }
 
 nav ul{
+
 display:none;
 flex-direction:column;
 background:white;
@@ -278,6 +374,7 @@ right:0;
 width:200px;
 padding:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
 }
 
 nav ul.active{
@@ -380,13 +477,13 @@ Além da impressão 3D da <strong>Ezra Tec 3D</strong>, também contamos com a e
 </p>
 
 <p>
-📍 Também temos uma <strong>loja física</strong> onde oferecemos diversos serviços de tecnologia.
+📍 Também temos uma <strong>loja física</strong> com serviços de tecnologia.
 </p>
 
 <p>
-💻 Manutenção de notebooks e computadores<br>
-🔧 Formatação e otimização de sistemas<br>
-🖨️ Impressões e gráfica rápida<br>
+💻 Manutenção de notebooks<br>
+🔧 Formatação de computadores<br>
+🖨️ Gráfica rápida<br>
 🧩 Projetos personalizados em impressão 3D
 </p>
 
@@ -410,28 +507,22 @@ src="https://www.google.com/maps?q=Brasil&output=embed">
 
 <div class="review">
 ⭐ ⭐ ⭐ ⭐ ⭐
-<p>Excelente atendimento e produtos de qualidade!</p>
+<p>Produto excelente e atendimento muito bom.</p>
 </div>
 
 <div class="review">
 ⭐ ⭐ ⭐ ⭐ ⭐
-<p>O dragão articulado é incrível, recomendo!</p>
+<p>O dragão articulado ficou incrível!</p>
 </div>
 
 <div class="review">
 ⭐ ⭐ ⭐ ⭐ ⭐
-<p>Levei meu notebook para manutenção e ficou perfeito.</p>
+<p>Arrumaram meu notebook super rápido.</p>
 </div>
 
 </div>
 
 </section>
-
-<footer>
-
-© 2026 Ezra Tec 3D
-
-</footer>
 
 </div>
 
@@ -444,19 +535,10 @@ src="https://www.google.com/maps?q=Brasil&output=embed">
 /* MENU HAMBURGUER */
 
 function toggleMenu(){
+
 document.getElementById("menu").classList.toggle("active")
+
 }
-
-/* SCROLL SUAVE */
-
-document.querySelectorAll("nav a").forEach(link=>{
-link.addEventListener("click",function(e){
-e.preventDefault()
-document.querySelector(this.getAttribute("href")).scrollIntoView({
-behavior:"smooth"
-})
-})
-})
 
 /* CARROSSEL */
 
@@ -484,9 +566,11 @@ function animar(){
 const topo=window.scrollY + window.innerHeight - 100
 
 sections.forEach(sec=>{
+
 if(topo>sec.offsetTop){
 sec.classList.add("aparecer")
 }
+
 })
 
 }
